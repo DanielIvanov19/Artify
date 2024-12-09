@@ -1,5 +1,6 @@
 from django.db import models
 
+from Artify import settings
 from Artify.artworks.models import Artwork
 from Artify.orders.models import CustomerOrder
 
@@ -7,7 +8,7 @@ from Artify.orders.models import CustomerOrder
 class Review(models.Model):
     RATINGS = [(i, str(i)) for i in range(1, 6)]  # 1-5 star rating system
 
-    customer = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='reviews')  # Customer who wrote the review
+    customer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='reviews')  # Customer who wrote the review
     artwork = models.ForeignKey(Artwork, on_delete=models.CASCADE, related_name='reviews', blank=True, null=True)  # Artwork being reviewed (optional)
     order = models.ForeignKey(CustomerOrder, on_delete=models.CASCADE, related_name='reviews', blank=True, null=True)  # Order being reviewed (optional)
     content = models.TextField()  # Review content
