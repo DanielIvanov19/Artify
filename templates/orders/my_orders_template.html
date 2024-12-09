@@ -1,0 +1,16 @@
+{% extends 'common/base.html' %}
+
+{% block title %}My Orders{% endblock %}
+
+{% block content %}
+<h1>My Orders</h1>
+<ul>
+    {% for order in orders %}
+        <li>
+            <strong>Category:</strong> {{ order.category.name }} <br>
+            <strong>Status:</strong> {{ order.status }} <br>
+            <strong>Ordered On:</strong> {{ order.ordered_on }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

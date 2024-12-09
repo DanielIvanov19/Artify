@@ -1,0 +1,12 @@
+{% extends 'common/base.html' %}
+
+{% block title %}Canvas Order Form{% endblock %}
+
+{% block content %}
+<h1>Canvas Custom Order</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit Order</button>
+</form>
+{% endblock %}
