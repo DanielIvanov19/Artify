@@ -4,7 +4,7 @@ from .models import CustomerOrder
 class TShirtOrderForm(forms.ModelForm):
     class Meta:
         model = CustomerOrder
-        fields = ['category', 'size', 'custom_image', 'description', 'delivery_address']
+        fields = ['category', 'size', 'custom_image', 'description', 'delivery_address', 'artist']
         widgets = {
             'description': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Describe your design idea...'}),
         }
@@ -12,7 +12,7 @@ class TShirtOrderForm(forms.ModelForm):
 class AccessoriesOrderForm(forms.ModelForm):
     class Meta:
         model = CustomerOrder
-        fields = ['category', 'custom_image', 'description', 'delivery_address']
+        fields = ['category', 'custom_image', 'description', 'delivery_address', 'artist']
         widgets = {
             'description': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Describe your design idea...'}),
         }
@@ -20,7 +20,7 @@ class AccessoriesOrderForm(forms.ModelForm):
 class CanvasOrderForm(forms.ModelForm):
     class Meta:
         model = CustomerOrder
-        fields = ['category', 'size', 'frame_option', 'custom_image', 'description', 'delivery_address']
+        fields = ['category', 'size', 'frame_option', 'custom_image', 'description', 'delivery_address', 'artist']
         widgets = {
             'description': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Describe your design idea...'}),
         }
